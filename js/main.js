@@ -62,11 +62,18 @@ elAllBtn.addEventListener("click",()=>{
 })
 
 elComplatedBtn.addEventListener("click",()=>{
+
 render([...complatedArray],elList);
+all.textContent=todos.length;
+
+
 })
 
 elUncomplatedBtn.addEventListener("click",()=>{
   render([...uncomplatedArray],elList);
+ 
+  all.textContent=todos.length;
+ 
 })
 
 function render(array,node) {
@@ -107,9 +114,9 @@ function render(array,node) {
      
   });
 
-   complatedArray = array.filter((item)=>item.isCompleted)
+   complatedArray = todos.filter((item)=>item.isCompleted)
      complated.textContent = complatedArray.length 
 
-   uncomplatedArray= array.filter((item)=>!item.isCompleted)
+   uncomplatedArray= todos.filter((item)=>!item.isCompleted)
      uncomplated.textContent = uncomplatedArray.length 
 }
